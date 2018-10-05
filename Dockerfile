@@ -8,8 +8,6 @@ WORKDIR /home/opensemanticsearch
 
 RUN wget https://opensemanticsearch.org/download/open-semantic-search_18.09.27.deb
 
-RUN dpkg --install open-semantic-search_18.09.27.deb
-
-RUN apt-get -f install
+RUN dpkg --install open-semantic-search_18.09.27.deb && apt-get -f install
 
 EXPOSE 80
