@@ -11,3 +11,5 @@ RUN wget https://opensemanticsearch.org/download/open-semantic-search_18.09.27.d
 RUN dpkg --install open-semantic-search_18.09.27.deb && apt-get -f install
 
 EXPOSE 80
+
+EXPOSE 8983
