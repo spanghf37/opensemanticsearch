@@ -1,23 +1,23 @@
 sudo: required
 services:
 - docker
-language: node_js
+#language: node_js
 install:
-- npm install gun
-- npm install influx
+#- npm install gun
+#- npm install influx
 #- docker build -t spanghf37/gun-test .
 #- docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
 #- docker tag spanghf37/gun-test spanghf37/gun-test:amd64
 #- docker push spanghf37/gun-test:amd64
 before_script:
-- sudo docker run -d --name gun-test spanghf37/gun-test:amd64 
-- sudo docker exec -it gun-test bash ls
+#- sudo docker run -d --name gun-test spanghf37/gun-test:amd64 
+#- sudo docker exec -it gun-test bash ls
 script:
 # build image
-#- docker build -t spanghf37/gun-test .
+- docker build -t spanghf37/opensemanticsearch .
 # push image
-#- docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-#- docker tag spanghf37/gun-test spanghf37/gun-test:amd64
-#- docker push spanghf37/gun-test:amd64
+- docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+- docker tag spanghf37/opensemanticsearch spanghf37/opensemanticsearch:amd64
+- docker push spanghf37/opensemanticsearch:amd64
 # use image
-- node influxtest.js
+#- node influxtest.js
